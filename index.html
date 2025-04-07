@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VKL - Find Local Businesses in Greencastle, IN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .business-card {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.85);
+            z-index: 0;
+        }
+        .business-content {
+            position: relative;
+            z-index: 1;
+        }
+        .active-filter {
+            background-color: #F4D03F;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center">
+            <div class="flex items-center">
+                <a href="/home.html" class="text-3xl font-bold text-yellow-500 mr-2">VKL</a>
+
+                <div class="hidden md:block text-sm text-gray-500">Greencastle, IN</div>
+            </div>
+            <div class="flex-1 mx-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search restaurants or stores" 
+                           class="w-full border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <button class="absolute right-3 top-2 text-gray-400">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="https://business.udemy.com/?utm_source=organic-search&utm_medium=google" class="text-gray-700 hover:text-yellow-500">For Businesses</a>
+                <a href="https://forms.gle/VVgdEwe6pZvLwsGn9" class="text-gray-700 hover:text-yellow-500">Write a Review</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6 flex flex-col md:flex-row">
+        <!-- Filters -->
+        <aside class="w-full md:w-1/4 pr-0 md:pr-6 mb-6 md:mb-0">
+            <div class="bg-white rounded-lg shadow p-4 sticky top-20">
+                <h2 class="font-bold text-lg mb-4">Filters</h2>
+                
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-2">Categories</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button id="restaurants-btn" class="filter-btn active-filter px-3 py-1 rounded-full border border-gray-300 text-sm">
+                            Restaurants
+                        </button>
+                        <button id="stores-btn" class="filter-btn px-3 py-1 rounded-full border border-gray-300 text-sm">
+                            Stores
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-2">Price</h3>
+                    <div class="flex gap-2">
+                        <button class="px-2 py-1 rounded border border-gray-300 text-sm">$</button>
+                        <button class="px-2 py-1 rounded border border-gray-300 text-sm">$$</button>
+                        <button class="px-2 py-1 rounded border border-gray-300 text-sm">$$$</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-2">Sort By</h3>
+                    <select class="w-full border border-gray-300 rounded p-2 text-sm">
+                        <option>Best Match</option>
+                        <option>Distance</option>
+                        <option>Highest Rated</option>
+                        <option>Most Reviewed</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Business Listings -->
+        <section class="w-full md:w-3/4">
+            <!-- Restaurants Section -->
+            <div id="restaurants-section">
+                <!-- The Whisk -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="businesses/theWhisk.html">The Whisk</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">4.9 (128 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>18 S Jackson St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Thu: 5:00-9:00 PM, Fri: 5:00-10:00 PM, 
+                                            Sat: 10:00 AM-2:00 PM, Sun: 10:00 AM-2:00 PM
+                                        </p>
+                                        <p class="text-sm text-gray-500">Closed Mon-Wed</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://thewhisk.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Bodega -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="businesses/theBodega.html">The Bodega</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">5.0 (96 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>16 S Jackson St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Mon-Fri: 7:00 AM-2:00 PM, Sat: 9:00 AM-2:00 PM
+                                        </p>
+                                        <p class="text-sm text-gray-500">Closed Sunday</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://thebodega.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Almost Home Restaurant -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="businesses/almostHomeRestaurant.html">Almost Home Restaurant</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">4.3 (87 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>17 W Franklin St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Mon,Thu-Sat: 11:00 AM-8:00 PM, Tue-Wed: 11:00 AM-3:00 PM, Sun: 11:00 AM-3:00 PM
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://almosthomerestaurant.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 West Bistro -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="businesses/2WestBistro.html">2 West Bistro</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">4.4 (112 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$$$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>2 W Seminary St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Thu: 11:00 AM-3:00 PM, Sat: 8:00 AM-12:00 PM, Sun: 8:00 AM-2:00 PM
+                                        </p>
+                                        <p class="text-sm text-gray-500">Closed Mon-Wed</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://2westbistro.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TapHouse Burgers -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="businesses/TapHouseBurgers.html">TapHouse Burgers</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">4.2 (76 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>24 S Indiana St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Wed-Sun: 12:00-7:00 PM
+                                        </p>
+                                        <p class="text-sm text-gray-500">Closed Mon-Tue</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://taphouseburgers.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stores Section (hidden by default) -->
+            <div id="stores-section" class="hidden">
+                <!-- Britt's Blooming Boutique -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="/businesses/brittBloomingBoutique.html">Britt's Blooming Boutique</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">5.0 (64 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>21 S Indiana St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Mon-Fri: 11:00 AM-5:00 PM, Sat: 11:00 AM-6:00 PM
+                                        </p>
+                                        <p class="text-sm text-gray-500">Closed Sunday</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://brittsboutique.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blushing Beaus Boutique -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="/businesses/BlushingBeausBoutique.html">Blushing Beaus Boutique</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">5.0 (58 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$$$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>8 W Washington St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Tue-Fri: 11:00 AM-5:00 PM, Sat: 10:00 AM-5:00 PM
+                                        </p>
+                                        <p class="text-sm text-gray-500">Closed Mon & Sun</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://blushingbeaus.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Label Shopper -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="/businesses/LabelShopper.html">Label Shopper</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">4.1 (42 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>27 Putnam Plaza C, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Mon-Fri: 9:00 AM-8:00 PM, Sat: 10:00 AM-6:00 PM, Sun: 12:00-5:00 PM
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://labelshoper.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conspire: Contemporary Craft -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="/businesses/Conspire.html">Conspire: Contemporary Craft</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">4.9 (37 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>14 E Washington St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Tue-Fri: 11:00 AM-6:00 PM, Sat: 10:00 AM-5:00 PM
+                                        </p>
+                                        <p class="text-sm text-gray-500">Closed Mon & Sun</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://conspirecraft.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burdge Boots & Boutique -->
+                <div class="business-card bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-5 business-content">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 hover:text-yellow-500">
+                                    <a href="/businesses/burdgeBoots.html">Burdge Boots & Boutique</a>
+                                </h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-1">4.9 (53 reviews)</span>
+                                </div>
+                                <div class="mt-2 text-gray-600">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-400 mr-1"></i>
+                                        <span>$$$</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                        <span>100 W Walnut St, Greencastle, IN 46135</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm">
+                                            <strong>Hours:</strong> Tue-Fri: 11:00 AM-6:00 PM, Sat: 11:00 AM-5:00 PM
+                                        </p>
+                                        <p class="text-sm text-gray-500">Closed Mon & Sun</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="text-gray-400 hover:text-yellow-500 mb-2">
+                                    <i class="far fa-heart text-xl"></i>
+                                </button>
+                                <a href="https://burdgeboots.com" target="_blank" class="text-blue-500 text-sm hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-yellow-500 mb-2">VKL</div>
+                    <p class="text-gray-600">Find the best local businesses</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-3">About</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">About VKL</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Careers</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Press</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Discover</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">VKL for Business</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Developers</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Guidelines</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Help Center</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Contact Us</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 VKL, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle between Restaurants and Stores
+        function toggleFilter(selectedFilter) {
+            const restaurantsBtn = document.getElementById('restaurants-btn');
+            const storesBtn = document.getElementById('stores-btn');
+            const restaurantsSection = document.getElementById('restaurants-section');
+            const storesSection = document.getElementById('stores-section');
+
+            if (selectedFilter === 'restaurants') {
+                restaurantsBtn.classList.add('active-filter');
+                storesBtn.classList.remove('active-filter');
+                restaurantsSection.classList.remove('hidden');
+                storesSection.classList.add('hidden');
+            } else {
+                storesBtn.classList.add('active-filter');
+                restaurantsBtn.classList.remove('active-filter');
+                storesSection.classList.remove('hidden');
+                restaurantsSection.classList.add('hidden');
+            }
+        }
+
+        // Initialize with restaurants shown
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleFilter('restaurants');
+            
+            // Add event listeners
+            document.getElementById('restaurants-btn').addEventListener('click', function() {
+                toggleFilter('restaurants');
+            });
+
+            document.getElementById('stores-btn').addEventListener('click', function() {
+                toggleFilter('stores');
+            });
+        });
+    </script>
+
+    <!-- ChatGPT Chatbox -->
+    <div id="chatbox-container" class="fixed bottom-4 right-4 w-80 bg-white rounded-lg shadow-xl z-50 hidden">
+        <div class="flex justify-between items-center bg-yellow-500 text-white p-3 rounded-t-lg">
+            <h3 class="font-bold">VKL Assistant</h3>
+            <button id="close-chat" class="text-white hover:text-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chat-messages" class="h-64 p-3 overflow-y-auto bg-gray-50">
+            <div class="text-center text-gray-500 text-sm py-4">
+                Ask me about local businesses in Greencastle!
+            </div>
+        </div>
+        <div class="p-3 border-t border-gray-200">
+            <div class="flex">
+                <input id="chat-input" type="text" placeholder="Type your question..." 
+                       class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                <button id="send-chat" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-r-lg">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button id="chat-toggle" class="fixed bottom-4 right-4 bg-yellow-500 hover:bg-yellow-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-40">
+        <i class="fas fa-comment-dots text-xl"></i>
+    </button>
+
+    <script>
+        // Chatbox functionality
+        const chatbox = document.getElementById('chatbox-container');
+        const chatToggle = document.getElementById('chat-toggle');
+        const closeChat = document.getElementById('close-chat');
+        const chatInput = document.getElementById('chat-input');
+        const sendChat = document.getElementById('send-chat');
+        const chatMessages = document.getElementById('chat-messages');
+
+        chatToggle.addEventListener('click', () => {
+            chatbox.classList.toggle('hidden');
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatbox.classList.add('hidden');
+        });
+
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-2 p-2 rounded-lg ${isUser ? 'bg-yellow-100 ml-8' : 'bg-white border border-gray-200 mr-8'}`;
+            messageDiv.textContent = content;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendChat.addEventListener('click', async () => {
+            const question = chatInput.value.trim();
+            if (!question) return;
+            
+            addMessage(question, true);
+            chatInput.value = '';
+            
+            // Simulate ChatGPT response (in a real implementation, you'd call an API)
+            addMessage("I'm a simulated AI assistant. In a real implementation, this would connect to ChatGPT's API to provide answers about local businesses.");
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendChat.click();
+            }
+        });
+    </script>
+</body>
+</html>

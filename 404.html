@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | VKL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center">
+            <a href="index.html" class="mr-4 text-gray-600 hover:text-yellow-500">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </a>
+            <div class="text-xl font-bold text-gray-800">Page Not Found</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+            <div class="text-6xl text-yellow-500 mb-4">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h1 class="text-3xl font-bold mb-4">404 - Page Not Found</h1>
+            <p class="text-gray-700 mb-6">
+                The page you're looking for doesn't exist or has been moved.
+                <br>
+                Try searching for what you need or return to the homepage.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html" class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-6 rounded-lg">
+                    <i class="fas fa-home mr-2"></i> Return Home
+                </a>
+                <a href="index.html" class="border border-yellow-500 text-yellow-500 hover:bg-yellow-50 py-2 px-6 rounded-lg">
+                    <i class="fas fa-search mr-2"></i> Search Businesses
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-yellow-500 mb-2">VKL</div>
+                    <p class="text-gray-600">Find the best local businesses</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-3">About</h4>
+                        <ul class="space-y-2">
+                            <li><a href="about.html" class="text-gray-600 hover:text-yellow-500">About VKL</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Help Center</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 VKL, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ChatGPT Chatbox -->
+    <div id="chatbox-container" class="fixed bottom-4 right-4 w-80 bg-white rounded-lg shadow-xl z-50 hidden">
+        <div class="flex justify-between items-center bg-yellow-500 text-white p-3 rounded-t-lg">
+            <h3 class="font-bold">VKL Assistant</h3>
+            <button id="close-chat" class="text-white hover:text-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chat-messages" class="h-64 p-3 overflow-y-auto bg-gray-50">
+            <div class="text-center text-gray-500 text-sm py-4">
+                Ask me about local businesses in Greencastle!
+            </div>
+        </div>
+        <div class="p-3 border-t border-gray-200">
+            <div class="flex">
+                <input id="chat-input" type="text" placeholder="Type your question..." 
+                       class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                <button id="send-chat" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-r-lg">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button id="chat-toggle" class="fixed bottom-4 right-4 bg-yellow-500 hover:bg-yellow-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-40">
+        <i class="fas fa-comment-dots text-xl"></i>
+    </button>
+
+    <script>
+        // Chatbox functionality
+        const chatbox = document.getElementById('chatbox-container');
+        const chatToggle = document.getElementById('chat-toggle');
+        const closeChat = document.getElementById('close-chat');
+        const chatInput = document.getElementById('chat-input');
+        const sendChat = document.getElementById('send-chat');
+        const chatMessages = document.getElementById('chat-messages');
+
+        chatToggle.addEventListener('click', () => {
+            chatbox.classList.toggle('hidden');
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatbox.classList.add('hidden');
+        });
+
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-2 p-2 rounded-lg ${isUser ? 'bg-yellow-100 ml-8' : 'bg-white border border-gray-200 mr-8'}`;
+            messageDiv.textContent = content;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendChat.addEventListener('click', async () => {
+            const question = chatInput.value.trim();
+            if (!question) return;
+            
+            addMessage(question, true);
+            chatInput.value = '';
+            
+            // Simulate ChatGPT response (in a real implementation, you'd call an API)
+            addMessage("I'm a simulated AI assistant. In a real implementation, this would connect to ChatGPT's API to provide answers about local businesses.");
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendChat.click();
+            }
+        });
+    </script>
+</body>
+</html>
