@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Details | VKL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .business-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+        }
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .map-container iframe {
+            filter: grayscale(20%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center">
+            <a href="/index.html" class="mr-4 text-gray-600 hover:text-yellow-500">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </a>
+            <div class="text-xl font-bold text-gray-800">Business Details</div>
+        </div>
+    </header>
+
+    <!-- Business Hero -->
+    <div class="business-hero flex items-end text-white">
+        <div class="container mx-auto px-4 pb-6">
+            <h1 class="text-3xl font-bold" id="business-name">Conspire: Contemporary Craft </h1>
+            <div class="flex items-center mt-2">
+                <div class="text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span>4.9 (128 reviews)</span>
+                <span class="mx-2">•</span>
+                <span><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i></span>
+                <span class="mx-2">•</span>
+                <span>Stores</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Business Info -->
+                <div class="md:col-span-2">
+                    <h2 class="text-xl font-bold mb-4">About</h2>
+                    <p class="text-gray-700 mb-4" id="business-description">
+                        A unique and highly-rated shop showcasing the work of contemporary craftspeople. Discover distinctive and handcrafted items during their Tuesday through Saturday hours.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <h3 class="font-semibold mb-2">Location</h3>
+                            <p class="text-gray-600" id="business-address">
+                                <i class="fas fa-map-marker-alt mr-2 text-yellow-500"></i>
+                                14 E Washington St, Greencastle, IN 46135
+                            </p>
+                            <button 
+    class="mt-2 text-blue-500 text-sm hover:underline"
+    onclick="window.location.href='//www.google.com/maps/place/Conspire:+Contemporary+Craft/@39.6439222,-86.8649874,17z/data=!4m6!3m5!1s0x886cdfacf7ec10c1:0xa15d801e0ca01939!8m2!3d39.6438396!4d-86.8638501!16s%2Fg%2F11c5264gcj?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D'"
+>
+    <i class="fas fa-directions mr-1"></i> Get Directions
+</button>
+
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-semibold mb-2">Contact</h3>
+                            <p class="text-gray-600 mb-1">
+                                <i class="fas fa-phone-alt mr-2 text-yellow-500"></i>
+                                <a href="tel:+17657192476" class="hover:underline">(765) 719-2476</a>
+                            </p>
+                            <p class="text-gray-600">
+                                <i class="fas fa-globe mr-2 text-yellow-500"></i>
+                                <a href="http://www.conspireindiana.com/" target="_blank" class="hover:underline">http://www.conspireindiana.com/</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-2">Hours</h3>
+                        <div class="text-gray-600" id="business-hours">
+                            <div class="grid grid-cols-3 gap-2 mb-1">
+                                <span>Tuesday-Friday:</span>
+                                <span class="col-span-2"> 11:00 AM-6:00 PM</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 mb-1">
+                                <span>Saturday: </span>
+                                <span class="col-span-2">10:00 AM - 5:00 PM</span>
+                            </div>
+                            
+                            <div class="grid grid-cols-3 gap-2 mb-1">
+                                <span>Monday & Sunday </span>
+                                <span class="col-span-2">Closed</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Amenities -->
+                    <div>
+                        <h3 class="font-semibold mb-2">Amenities</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-wifi text-yellow-500 mr-1"></i> Free Wi-Fi
+                            </span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-wheelchair text-yellow-500 mr-1"></i> Wheelchair Accessible
+                            </span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-parking text-yellow-500 mr-1"></i> Parking Available
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="map-container">
+                    <h3 class="font-semibold mb-2">Location</h3>
+                    <div class="rounded-lg overflow-hidden shadow-md h-64">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            scrolling="no" 
+                            marginheight="0" 
+                            marginwidth="0" 
+                            src="https://maps.google.com/maps?q=18%20S%20Jackson%20St%2C%20Greencastle%2C%20IN%2046135&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                        </iframe>
+                    </div>
+                    <button class="mt-2 w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-lg"
+                    onclick="window.location.href='//www.google.com/maps/place/Conspire:+Contemporary+Craft/@39.6439222,-86.8649874,17z/data=!4m6!3m5!1s0x886cdfacf7ec10c1:0xa15d801e0ca01939!8m2!3d39.6438396!4d-86.8638501!16s%2Fg%2F11c5264gcj?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D'">
+                        <i class="fas fa-directions mr-2"></i> Get Directions
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">Reviews</h2>
+                <button class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-lg">
+                    <i class="fas fa-pen mr-2"></i> Write a Review
+                </button>
+            </div>
+
+            <!-- Review 1 -->
+            <div class="border-b border-gray-200 pb-4 mb-4">
+                <div class="flex items-start mb-2">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" 
+                         alt="User avatar" class="review-avatar mr-3">
+                    <div>
+                        <h4 class="font-semibold">Michael S.</h4>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <div class="text-yellow-400 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>• 2 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700">
+                    Absolutely fantastic experience! The food was delicious and the service was impeccable. 
+                    The chef's special was one of the best meals I've had in Greencastle. Highly recommend!
+                </p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="border-b border-gray-200 pb-4 mb-4">
+                <div class="flex items-start mb-2">
+                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" 
+                         alt="User avatar" class="review-avatar mr-3">
+                    <div>
+                        <h4 class="font-semibold">Sarah J.</h4>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <div class="text-yellow-400 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>• 1 month ago</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700">
+                    Came here for our anniversary dinner and it was perfect. The ambiance was romantic, 
+                    the wine selection was excellent, and the staff made us feel special. Will definitely be back!
+                </p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="pb-4">
+                <div class="flex items-start mb-2">
+                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" 
+                         alt="User avatar" class="review-avatar mr-3">
+                    <div>
+                        <h4 class="font-semibold">David L.</h4>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <div class="text-yellow-400 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>• 2 months ago</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700">
+                    Great spot for a business lunch. The menu has good variety and the portions are generous. 
+                    The only minor complaint was that our food took a little longer than expected, but it was worth the wait.
+                </p>
+            </div>
+
+            <button class="mt-4 text-blue-500 hover:underline">See all 128 reviews</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-yellow-500 mb-2">VKL</div>
+                    <p class="text-gray-600">Find the best local businesses</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-3">About</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">About VKL</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Help Center</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 VKL, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // This would be replaced with actual dynamic content loading in a real application
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const businessName = params.get('name');
+            
+            if (businessName) {
+                document.getElementById('business-name').textContent = businessName;
+                document.title = `${businessName} | VKL`;
+            }
+        });
+    </script>
+
+    <!-- ChatGPT Chatbox -->
+    <div id="chatbox-container" class="fixed bottom-4 right-4 w-80 bg-white rounded-lg shadow-xl z-50 hidden">
+        <div class="flex justify-between items-center bg-yellow-500 text-white p-3 rounded-t-lg">
+            <h3 class="font-bold">VKL Assistant</h3>
+            <button id="close-chat" class="text-white hover:text-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chat-messages" class="h-64 p-3 overflow-y-auto bg-gray-50">
+            <div class="text-center text-gray-500 text-sm py-4">
+                Ask me about local businesses in Greencastle!
+            </div>
+        </div>
+        <div class="p-3 border-t border-gray-200">
+            <div class="flex">
+                <input id="chat-input" type="text" placeholder="Type your question..." 
+                       class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                <button id="send-chat" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-r-lg">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button id="chat-toggle" class="fixed bottom-4 right-4 bg-yellow-500 hover:bg-yellow-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-40">
+        <i class="fas fa-comment-dots text-xl"></i>
+    </button>
+
+    <script>
+        // Chatbox functionality
+        const chatbox = document.getElementById('chatbox-container');
+        const chatToggle = document.getElementById('chat-toggle');
+        const closeChat = document.getElementById('close-chat');
+        const chatInput = document.getElementById('chat-input');
+        const sendChat = document.getElementById('send-chat');
+        const chatMessages = document.getElementById('chat-messages');
+
+        chatToggle.addEventListener('click', () => {
+            chatbox.classList.toggle('hidden');
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatbox.classList.add('hidden');
+        });
+
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-2 p-2 rounded-lg ${isUser ? 'bg-yellow-100 ml-8' : 'bg-white border border-gray-200 mr-8'}`;
+            messageDiv.textContent = content;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendChat.addEventListener('click', async () => {
+            const question = chatInput.value.trim();
+            if (!question) return;
+            
+            addMessage(question, true);
+            chatInput.value = '';
+            
+            // Simulate ChatGPT response (in a real implementation, you'd call an API)
+            addMessage("I'm a simulated AI assistant. In a real implementation, this would connect to ChatGPT's API to provide answers about local businesses.");
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendChat.click();
+            }
+        });
+    </script>
+</body>
+</html>
