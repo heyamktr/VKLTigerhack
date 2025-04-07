@@ -10,20 +10,35 @@ bash
 Copy
 Edit
 greencastle-hub/
+
 ├── .vscode/                 # Optional VS Code settings
+
 ├── businesses/              # Individual HTML pages for local businesses
+
 │   ├── 2WestBistro.html
+
 │   ├── AlmostHome.html
+
 │   ├── Conspire.html
+
 │   └── ... (more)
+
 ├── images/                  # All image assets
+
 │   ├── Greencastle3.webp
+
 │   ├── East_College2.jpg
+
 │   └── ...
+
 ├── home.html                # Homepage with welcome message, events, and links
+
 ├── about.html               # About the community and project goals
+
 ├── 404.html                 # Custom "Page Not Found" error page (optional)
+
 └── README.md                # This documentation file
+
 🌟 Features
 🏠 Homepage (home.html)
 Engaging hero section, business spotlight grid, upcoming events, and external links to community resources.
