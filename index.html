@@ -33,6 +33,9 @@
     </style>
 </head>
 <body class="bg-gray-50">
+    <audio autoplay loop>
+        <source src="/music/y2mate.com - River Flows In YouSmooth  Relaxing  ViolinCelloPiano ver.mp3" type="audio/mpeg">
+      </audio>
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex items-center">
@@ -602,8 +605,8 @@
                     <div>
                         <h4 class="font-semibold mb-3">Support</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Help Center</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-yellow-500">Contact Us</a></li>
+                            <li><a href="https://cityofgreencastle.com/192/Contact-Us" class="text-gray-600 hover:text-yellow-500">Help Center</a></li>
+                            <li><a href="+17657123376" class="text-gray-600 hover:text-yellow-500">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -613,8 +616,18 @@
             </div>
         </div>
     </footer>
-
+<audio autoplay loop>
+  <source src="music/background.mp3" type="audio/mpeg">
+</audio>
     <script>
+        
+        function startMusic() {
+            const audio = document.getElementById("bg-music");
+            audio.play();
+            // Only allow music to start once
+            document.body.onclick = null;
+          }
+          
         // Toggle between Restaurants and Stores
         function toggleFilter(selectedFilter) {
             const restaurantsBtn = document.getElementById('restaurants-btn');
